@@ -22,7 +22,7 @@ app.component('gundam-list', {
                     <i class="material-icons text-red-400 flex flex-wrap items-center text-5xl cursor-pointer animate-bounce" v-on:click="like(index)" v-if="gundams.like">
                     favorite
                     </i>
-                 <i class="material-icons text-red-400 flex flex-wrap items-center text-4xl cursor-pointer" v-on:click="like(index)" v-else>
+                 <i class="material-icons text-black flex flex-wrap items-center text-5xl cursor-pointer" v-on:click="like(index)" v-else>
                     favorite
                  </i>
             </div>
