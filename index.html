@@ -24,12 +24,14 @@
   <div id="app" class="px-8 py-28 justify-center h-screen w-screen bg-blue-100">
     <div class="bg-white rounded-md px-4">
       <p class="text-center font-mono text-2xl font-bold">{{head}}</p>
+      <gundam-list :gundam="gundam"></gundam-list>
     </div>
   </div>
 
   <!-- my main.js -->
   <script src="./main.js"></script>
   <script src="./components/List.js"></script>
+
   <script>
     const mountedApp = app.mount('#app')
   </script>

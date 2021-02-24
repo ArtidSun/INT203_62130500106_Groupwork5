@@ -1,4 +1,4 @@
-app.component('Gundam-List', {
+app.component('gundam-list', {
     props: {
         gundam: {
             type: Array,
@@ -7,25 +7,27 @@ app.component('Gundam-List', {
     },
     template:
         /*html*/
-        ` <div class=" flex justify-between">
-    <div v-for="(gundam,index) in tasks" class="flex">
+        ` 
+<div class=" flex justify-between">
+    <div v-for="(gundams,index) in gundam" class="flex">
         <div class=" flex-col space-y-3">
-            <img :src="task.image" v-on:click="toggleDone(index)"
+            <img :src="gundams.image"
                 class="h-64 hover:shadow-xl border border-white hover:border-gray-500 
             translate hover:-translate-y-1 hover:scale-110 transition transform  duration-500 cursor-pointer" />
             <div class="flex justify-between">
-                <div class=" flex-col">
-                    <div class="font-mono text-3xl font-medium">{{gundam.code}}<br></div>
-                    <div class="font-mono text-xl font-medium">{{gundam.name}}</div>
-                </div>
-                <i class="material-icons text-red-400 flex flex-wrap items-center text-5xl animate-bounce"
-                    v-show="task.done">
+                 <div class=" flex-col">
+                     <div class="font-mono text-3xl font-medium">{{gundams.code}}<br></div>
+                     <div class="font-mono text-xl font-medium">{{gundams.name}}</div>
+                 </div>
+                 <i class="material-icons text-red-400 flex flex-wrap items-center text-5xl animate-bounce"
+                     v-show="gundams.like">
                     favorite
-                </i>
+                 </i>
             </div>
         </div>
     </div>
-</div>`,
+</div>
+`,
     methods: {
 
     }
