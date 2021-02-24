@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Basic Vue Js - HelloWorld App</title>
+
+  <!-- https://google.github.io/material-design-icons/#icon-font-for-the-web -->
+  <!-- Using via Google Web Fonts -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+  <!-- https://tailwindcss.com/docs/installation -->
+  <!-- Using Tailwind via CDN -->
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+
+  <!-- https://v3.vuejs.org/guide/installation.html#release-notes -->
+  <!-- Vue CDN -->
+  <script src="https://unpkg.com/vue@next"></script>
+
+</head>
+
+<body>
+  <div id="app" class="px-8 py-28 justify-center h-screen w-screen bg-blue-100">
+    <div class="bg-white rounded-md px-4">
+      <p class="text-center font-mono text-2xl font-bold">{{head}}</p>
+    </div>
+  </div>
+
+  <!-- my main.js -->
+  <script src="./main.js"></script>
+  <script src="./components/List.js"></script>
+  <script>
+    const mountedApp = app.mount('#app')
+  </script>
+</body>
+
+</html>
