@@ -1,22 +1,28 @@
-    const app = Vue.createApp({
-        data() {
-            return {
-                head: 'Gundam gallery',
-                gundam: [{ image: 'images/Strike.jpg', code: 'ZGMF-X20A',name: 'Gundam Strike Freedom' , like: false },
-                { image: 'images/Exia.jpg', code: 'GN-001', name: 'Gundam Exia' , like: false },
-                { image: 'images/Barbatos.jpg', code: 'ASW-G-08',name: 'Gundam Barbatos Lupus Rex' , like: false }
-                ]              
-            }
-        },
-        methods:{
-            like(index){
-                this.gundam[index].like = !this.gundam[index].like;
-            }
-        },
-        computed: {
-            countlikepic() {
-                return this.gundam.filter( t => t.like ).length
-            }
+const app = Vue.createApp({
+    data() {
+        return {
+            head: 'Gundam gallery',
+            gundam: [{ image: 'images/Strike.jpg', code: 'ZGMF-X20A', name: 'Gundam Strike Freedom', like: false },
+            { image: 'images/Exia.jpg', code: 'GN-001', name: 'Gundam Exia', like: false },
+            { image: 'images/Barbatos.jpg', code: 'ASW-G-08', name: 'Gundam Barbatos Lupus Rex', like: false }
+            ],
+            searchOn: false,
+            searching: ''
         }
+    },
+    methods: {
+        like(index) {
+            this.gundam[index].like = !this.gundam[index].like;
+        },
+        switchsearch() {
+            this.searchOn = !this.searchOn;
+            this.searching = '';
+        }
+    },
+    computed: {
+        countlikepic() {
+            return this.gundam.filter(t => t.like).length
+        }
+    }
 
-    })
+})

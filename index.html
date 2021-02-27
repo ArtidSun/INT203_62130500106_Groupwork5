@@ -24,6 +24,7 @@
   <div id="app" class="px-8 py-28 justify-center h-screen w-screen bg-blue-100">
     <div class="bg-white rounded-md px-4">
       <p class="text-center font-mono text-2xl font-bold">{{head}} (Like: {{countlikepic}})</p>
+      <gundam-search @switchsearch="switchsearch()"></gundam-search>
       <gundam-list :gundam="gundam" @gundam-like="like"></gundam-list>
     </div>
   </div>
@@ -31,6 +32,7 @@
   <!-- my main.js -->
   <script src="./main.js"></script>
   <script src="./components/List.js"></script>
+  <script src="./components/Search.js"></script>
 
   <script>
     const mountedApp = app.mount('#app')
