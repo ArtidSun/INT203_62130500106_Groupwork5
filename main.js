@@ -14,14 +14,29 @@ const app = Vue.createApp({
         like(index) {
             this.gundam[index].like = !this.gundam[index].like;
         },
-        switchsearch() {
-            this.searchOn = !this.searchOn;
-            this.searching = '';
+        search(searchText){
+            this.searching = searchText;
         }
     },
     computed: {
         countlikepic() {
             return this.gundam.filter(t => t.like).length
+        },
+        searchingphoto() {
+
+            if (this.searching == '') {
+                console.log("test01");
+                return this.gundam;
+            } else {
+                let menu = this.gundam.filter(n => n.name.toLowerCase().includes(this.searching.toLowerCase()));
+                console.log("test02");
+                if (menu == '') {
+                    console.log("test03");
+                    return this.gundam;
+                }
+                return menu;
+            }
+
         }
     }
 
