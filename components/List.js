@@ -1,4 +1,7 @@
 app.component('gundam-list', {
+    emits:[
+        'gundam-like','showimg','show'
+    ],
     props: {
         gundam: {
             type: Array,
@@ -15,7 +18,7 @@ app.component('gundam-list', {
             <img :src="gundams.image"
                 class="h-64 hover:shadow-xl border border-white hover:border-gray-500 
             translate hover:-translate-y-1 hover:scale-110 transition transform  duration-500 cursor-pointer" 
-            v-on:click="showimg()"
+            v-on:click="showimg(index)"
             />
             <div class="flex justify-between">
                  <div class=" flex-col">

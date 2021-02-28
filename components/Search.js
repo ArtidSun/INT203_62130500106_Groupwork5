@@ -1,4 +1,7 @@
 app.component('gundam-search', {
+    emits:[
+        'search-gundam'
+    ],
     props: {
         gundam: {
             type: Array,

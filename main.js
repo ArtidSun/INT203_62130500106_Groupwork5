@@ -23,7 +23,7 @@ const app = Vue.createApp({
         showimg(index){
             this.show = !this.show;
             this.gindex = index;
-            console.log('test show');
+            console.log(this.gindex);
         },
         closeshow(){
             this.show = !this.show;

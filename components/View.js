@@ -1,4 +1,7 @@
 app.component('gundam-view', {
+    emits:[
+        'closeshow'
+    ],
     props: {
         searchingphoto: {
             type: Array,
