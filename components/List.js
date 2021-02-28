@@ -4,17 +4,19 @@ app.component('gundam-list', {
             type: Array,
             require: true
         },
-        'searchgundams': Array
+        'searchingphoto': Array
     },
     template:
         /*html*/
         ` 
 <div class=" flex justify-between">
-    <div v-for="(gundams,index) in searchgundams" class="flex">
+    <div v-for="(gundams,index) in searchingphoto" class="flex">
         <div class=" flex-col space-y-3">
             <img :src="gundams.image"
                 class="h-64 hover:shadow-xl border border-white hover:border-gray-500 
-            translate hover:-translate-y-1 hover:scale-110 transition transform  duration-500 cursor-pointer" />
+            translate hover:-translate-y-1 hover:scale-110 transition transform  duration-500 cursor-pointer" 
+            v-on:click="showimg()"
+            />
             <div class="flex justify-between">
                  <div class=" flex-col">
                      <div class="font-mono text-3xl font-medium">{{gundams.code}}<br></div>
@@ -31,9 +33,23 @@ app.component('gundam-list', {
     </div>
 </div>
 `,
+    data(){
+        return{
+            show:false,
+            gindex:0
+        }
+    },
     methods: {
         like(index) {
             this.$emit('gundam-like', index);
+            console.log('liked')
+        },
+        showimg(index){
+            this.gindex = index;
+            this.show = true;
+            this.$emit('showimg', this.gindex);
+            this.$emit('show', this.show);
+            console.log('showed');
         }
     }
 })

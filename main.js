@@ -2,12 +2,14 @@ const app = Vue.createApp({
     data() {
         return {
             head: 'Gundam gallery',
-            gundam: [{ image: 'images/Strike.jpg', code: 'ZGMF-X20A', name: 'Gundam Strike Freedom', like: false },
+            gundam: [{ image: 'images/Strike.jpg', code: 'ZGMF-X20A', name: 'Gundam Strike Freedom', like: false},
             { image: 'images/Exia.jpg', code: 'GN-001', name: 'Gundam Exia', like: false },
-            { image: 'images/Barbatos.jpg', code: 'ASW-G-08', name: 'Gundam Barbatos Lupus Rex', like: false }
+            { image: 'images/Barbatos.jpg', code: 'ASW-G-08', name: 'Gundam Barbatos Lupus Rex', like: false}
             ],
             searchOn: false,
-            searching: ''
+            searching: '',
+            gindex:0,
+            show: false
         }
     },
     methods: {
@@ -17,6 +19,15 @@ const app = Vue.createApp({
         searchEX(search){
             this.searching = search;
             console.log("testter");
+        },
+        showimg(index){
+            this.show = !this.show;
+            this.gindex = index;
+            console.log('test show');
+        },
+        closeshow(){
+            this.show = !this.show;
+            console.log("close-img");
         }
     },
     computed: {
@@ -31,7 +42,7 @@ const app = Vue.createApp({
                 let gundams = this.gundam.filter(n => n.name.toLowerCase().includes(this.searching.toLowerCase()));
                 console.log("test02");
                 if (gundams == '') {
-                    console.log("test03");
+                    console.log("Not found");
                     return this.gundam;
                 }
                 return gundams;

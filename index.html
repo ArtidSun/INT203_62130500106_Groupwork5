@@ -25,7 +25,8 @@
     <div class="bg-white rounded-md px-4 space-y-3">
       <p class="text-center font-mono text-2xl font-bold">{{head}} (Like: {{countlikepic}})</p>
       <gundam-search :gundam="gundam" @search-gundam="searchEX"></gundam-search>
-      <gundam-list :gundam="gundam" @gundam-like="like" :searchgundams="searchingphoto"></gundam-list>
+      <gundam-view :gindex="gindex" :searchingphoto="searchingphoto" :show="show" @showimg="showimg" @closeshow="closeshow"></gundam-view>
+      <gundam-list :gundam="gundam" @gundam-like="like" :searchingphoto="searchingphoto" @showimg="showimg"></gundam-list>
     </div>
   </div>
 
@@ -33,6 +34,7 @@
   <script src="./main.js"></script>
   <script src="./components/List.js"></script>
   <script src="./components/Search.js"></script>
+  <script src="./components/View.js"></script>
 
   <script>
     const mountedApp = app.mount('#app')
