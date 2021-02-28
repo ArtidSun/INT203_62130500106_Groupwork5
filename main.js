@@ -14,8 +14,9 @@ const app = Vue.createApp({
         like(index) {
             this.gundam[index].like = !this.gundam[index].like;
         },
-        search(searchText){
-            this.searching = searchText;
+        searchEX(search){
+            this.searching = search;
+            console.log("testter");
         }
     },
     computed: {
@@ -23,20 +24,18 @@ const app = Vue.createApp({
             return this.gundam.filter(t => t.like).length
         },
         searchingphoto() {
-
             if (this.searching == '') {
                 console.log("test01");
                 return this.gundam;
             } else {
-                let menu = this.gundam.filter(n => n.name.toLowerCase().includes(this.searching.toLowerCase()));
+                let gundams = this.gundam.filter(n => n.name.toLowerCase().includes(this.searching.toLowerCase()));
                 console.log("test02");
-                if (menu == '') {
+                if (gundams == '') {
                     console.log("test03");
                     return this.gundam;
                 }
-                return menu;
+                return gundams;
             }
-
         }
     }
 
