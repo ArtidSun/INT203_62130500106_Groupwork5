@@ -4,13 +4,13 @@ app.component('gundam-list', {
             type: Array,
             require: true
         },
-        'search-gundams': Array
+        'searchgundams': Array
     },
     template:
         /*html*/
         ` 
 <div class=" flex justify-between">
-    <div v-for="(gundams,index) in search-gundams" class="flex">
+    <div v-for="(gundams,index) in searchgundams" class="flex">
         <div class=" flex-col space-y-3">
             <img :src="gundams.image"
                 class="h-64 hover:shadow-xl border border-white hover:border-gray-500 
