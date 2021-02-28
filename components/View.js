@@ -14,9 +14,9 @@ app.component('gundam-view', {
         /*html*/
         ` 
         <div v-if="show">
+        <i class="material-icons fas fa-times text-red text-5xl p-2 cursor-pointer" v-on:click="closeshow()">clear</i>
         <img :src="searchingphoto[gindex].image">
         </div>
-        <i class="fas fa-times text-white text-3xl p-2 cursor-pointer" v-on:click="closeshow()"></i>
         
 `,
     methods: {
